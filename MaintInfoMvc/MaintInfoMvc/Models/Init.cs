@@ -33,12 +33,12 @@ namespace MaintInfoMvc.Models
             // Centres
             context.Centres.Add(new CentreInformatique
             {
-                 num_centre = 1,
-                 adresse_centre = "34, avenue de corot",
-                 cpl_centre = "13013",
-                 ville_centre = "Marseille",
-                 tel_centre = "0491609023",
-                 //Client = 1
+                num_centre = 1,
+                adresse_centre = "34, avenue de corot",
+                cpl_centre = "13013",
+                ville_centre = "Marseille",
+                tel_centre = "0491609023",
+                Client = new Client() { num_client = 1}
             });
 
             // Contrats
