@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des clients</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Numéro</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Téléphone</th>
+        </tr>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.num_client</td>
+                <td>@client.nom_client</td>
+                <td>@client.adresse_client</td>
+                <td>@client.cp_client</td>
+                <td>@client.ville_client</td>
+                <td>@client.tel_client</td>
+                <td>@*@Html.ActionLink("Modifier" + client.nom_client, "ModifierClient", new { id = client.num_client })*@</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
