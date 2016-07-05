@@ -40,8 +40,58 @@ namespace MaintInfoMvc.Models
                 tel_centre = "0491609023",
                 Client = new Client() { num_client = 1}
             });
+            context.Centres.Add(new CentreInformatique
+            {
+                num_centre = 2,
+                adresse_centre = "11, chemin du littoral",
+                cpl_centre = "13015",
+                ville_centre = "Marseille",
+                tel_centre = "0491601462",
+                Client = new Client() { num_client = 1 }
+            });
+            context.Centres.Add(new CentreInformatique
+            {
+                num_centre = 3,
+                adresse_centre = "14, rue François Chardigny",
+                cpl_centre = "13011",
+                ville_centre = "Marseille",
+                tel_centre = "0491691322",
+                Client = new Client() { num_client = 2 }
+            });
 
             // Contrats
+            context.Contrats.Add(new Contrat
+            {
+                num_contrat = 1,
+                montant_contrat = 24.65,
+                date_creation_contrat = new DateTime(2011, 02, 12),
+                date_echeance_contrat = new DateTime(2012, 02, 12),
+                statut = 1,
+                commentaire_contrat = "En cours",
+                Centre = new CentreInformatique() { num_centre = 1 }
+            });
+            context.Contrats.Add(new Contrat
+            {
+                num_contrat = 2,
+                montant_contrat = 13.480,
+                date_creation_contrat = new DateTime(2011, 03, 13),
+                date_echeance_contrat = new DateTime(2012, 03, 13),
+                statut = 1,
+                commentaire_contrat = "En cours",
+                Centre = new CentreInformatique() { num_centre = 2 }
+            });
+            context.Contrats.Add(new Contrat
+            {
+                num_contrat = 3,
+                montant_contrat = 32.740,
+                date_creation_contrat = new DateTime(2016, 04, 15),
+                date_echeance_contrat = new DateTime(2017, 04, 15),
+                statut = 1,
+                commentaire_contrat = "En cours",
+                Centre = new CentreInformatique() { num_centre = 3 }
+            });
+
+            base.Seed(context);
         }
     }
 }
